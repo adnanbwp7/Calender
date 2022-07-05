@@ -10,13 +10,11 @@ const Header = () => {
     const handleChange = (event) => {
         setCountryCode(event.target.value)
     }
-    const list = useSelector(state => state.dateReducer)
-    console.log('list: ', list);
-
-    console.log('CountryCode: ', countryCode)
+    const list = useSelector(state => state.dateReducer) 
+ 
     useEffect(() => {
         dispatch(dateActions(countryCode))
-    }, [countryCode]) 
+    }, [dispatch, countryCode])
     return (
         <>
             <head className="px-4 py-2 flex items-center justify-around">

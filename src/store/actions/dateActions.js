@@ -10,8 +10,7 @@ export const dateActions = (country ) => async (dispatch) => {
         dispatch({ type: GET_HOLIDAY_REQUEST });
         const response = await axios.get(
             `https://calendarific.com/api/v2/holidays?api_key=c651398bfae03af96838494da324048e473ede99&country=${country}&year=2022`
-        );
-        console.log("Actions: ", country );
+        ); 
         dispatch({ type: GET_HOLIDAY_SUCCESS, payload: response.data.response.holidays });
     } catch (error) {
         dispatch({
